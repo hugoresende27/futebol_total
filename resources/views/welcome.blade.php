@@ -6,7 +6,7 @@
     <div class="mt-16">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
 
-            <form action="{{route('find.team')}}" method="POST" class="flex m-3 p-3 text-center" enctype="multipart/form-data">
+            <form action="{{route('find.team')}}" method="POST" class="flex m-3 p-3 text-center">
                 @csrf
                 <input name="search" type="text" placeholder="search teams" class="p-3">
 
@@ -15,9 +15,18 @@
                 </button>
             </form>
 
+        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
 
+            <form action="{{route('find.player')}}" method="POST" class="flex m-3 p-3 text-center">
+                @csrf
+                <input name="search" type="text" placeholder="search players" class="p-3">
 
+                <button class="btn btn-success" type="submit">
+                    Players
+                </button>
+            </form>
 
         </div>
     </div>

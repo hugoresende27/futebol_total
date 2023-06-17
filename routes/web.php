@@ -33,3 +33,4 @@ require __DIR__.'/auth.php';
 
 
 Route::post('find-team', [FootballController::class, 'findTeam'])->name('find.team');
+Route::post('find-player', [FootballController::class, 'findPlayer'])->name('find.player');
