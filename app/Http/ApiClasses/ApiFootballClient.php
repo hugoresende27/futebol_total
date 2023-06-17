@@ -26,7 +26,7 @@ class ApiFootballClient
      * @return mixed
      * @throws GuzzleException
      */
-    public function searchTeam(string $teamName) : object
+    public function searchTeams(string $teamName) : object
     {
 
 
@@ -36,6 +36,22 @@ class ApiFootballClient
                 'X-RapidAPI-Key' => $this->apiKey ,
             ],
         ]);
+
+        return json_decode( $response->getBody()->getContents());
+
+    }
+
+    public function searchPlayers(string $playerName) : object
+    {
+
+
+        $response = $this->client->request('GET', $this->domain.'players?search='.$playerName.'&league=94', [
+            'headers' => [
+                'X-RapidAPI-Host' => $this->host ,
+                'X-RapidAPI-Key' => $this->apiKey ,
+            ],
+        ]);
+
 
         return json_decode( $response->getBody()->getContents());
 

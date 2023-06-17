@@ -8,7 +8,7 @@
 
             <form action="{{route('find.team')}}" method="POST" class="flex m-3 p-3 text-center">
                 @csrf
-                <input name="search" type="text" placeholder="search teams" class="p-3">
+                <input name="search" type="text" placeholder="search teams" class="p-3" required minlength="4">
 
                 <button class="btn btn-success" type="submit">
                     Teams
@@ -21,7 +21,7 @@
 
             <form action="{{route('find.player')}}" method="POST" class="flex m-3 p-3 text-center">
                 @csrf
-                <input name="search" type="text" placeholder="search players" class="p-3">
+                <input name="search" type="text" placeholder="search players" class="p-3" required minlength="4">
 
                 <button class="btn btn-success" type="submit">
                     Players

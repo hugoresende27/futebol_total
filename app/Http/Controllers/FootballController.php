@@ -14,7 +14,7 @@ class FootballController extends Controller
     {
         $teamToSearch = $request->search;
         $client = new ApiFootballClient();
-        $teamResult = $client->searchTeam($teamToSearch ?? 'benfica');
+        $teamResult = $client->searchTeams($teamToSearch ?? 'benfica');
         $results =  $teamResult->response;
         return view('search.teams', compact('results'));
     }
@@ -22,10 +22,10 @@ class FootballController extends Controller
 
     public function findPlayer(Request $request)
     {
-        $teamToSearch = $request->search;
-//        $client = new ApiFootballClient();
-//        $teamResult = $client->searchTeam($teamToSearch);
-//        $results =  $teamResult->response;
-        return view('search.players');
+        $playerToSearch = $request->search;
+        $client = new ApiFootballClient();
+        $playerToSearch = $client->searchPlayers($playerToSearch);
+        $results =  $playerToSearch->response;
+        return view('search.players', compact('results'));
     }
 }
